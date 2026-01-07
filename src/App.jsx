@@ -11,6 +11,11 @@ import ParticleField from './components/ParticleField'
 export default function App() {
   const [activeSection, setActiveSection] = useState('home')
 
+  // Debug: Add console log to verify app is loading
+  useEffect(() => {
+    console.log('Portfolio App loaded successfully!')
+  }, [])
+
   // Listen for navigation events from Hero section
   useEffect(() => {
     const handleNavigation = (event) => {
