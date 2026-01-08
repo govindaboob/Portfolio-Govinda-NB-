@@ -1,56 +1,56 @@
 const projects = [
   {
-    title: 'Personal Portfolio',
-    description: 'Modern, responsive portfolio website built with React and Tailwind CSS. Features mobile-first design, print-friendly CV section, smooth animations, and interactive particle effects that create an immersive user experience.',
-    tags: ['React', 'Tailwind CSS', 'Vite', 'Responsive Design', 'Animations'],
-    repo: 'https://github.com/yourusername/portfolio',
-    demo: 'https://yourportfolio.dev',
+    title: 'Health Monitoring System',
+    description: 'Developed a biomedical signal processing pipeline for ECG and GSR data using Python and MATLAB. Applied advanced filtering and feature extraction techniques, followed by a machine learning model for preliminary disease prediction with a focus on data accuracy and medical relevance.',
+    tags: ['Python', 'MATLAB', 'ECG Sensor', 'GSR Sensor', 'Machine Learning'],
+    repo: 'https://github.com/govindaboob/health-monitoring',
+    demo: 'https://health-monitoring.vercel.app',
     category: 'webapp',
-    icon: '🎨'
+    icon: '🏥'
   },
   {
-    title: 'E-commerce Dashboard',
-    description: 'Comprehensive admin dashboard for e-commerce management with real-time analytics, inventory tracking, order management, and customer insights. Built with modern React patterns and state management.',
-    tags: ['React', 'TypeScript', 'Chart.js', 'REST API', 'Material-UI'],
-    repo: 'https://github.com/yourusername/ecommerce-dashboard',
-    demo: 'https://yourdashboard.netlify.app',
+    title: 'Real-Time Stress Monitoring System',
+    description: 'Designed a real-time stress detection system using facial expression analysis and voice-based emotion recognition. Built an interactive web application with live webcam streaming and efficient ML inference using REST APIs.',
+    tags: ['TensorFlow', 'OpenCV', 'SpeechRecognition', 'Streamlit', 'WebRTC'],
+    repo: 'https://github.com/govindaboob/stress-monitoring',
+    demo: 'https://stress-monitoring.vercel.app',
     category: 'webapp',
-    icon: '📊'
+    icon: '😌'
   },
   {
-    title: 'Task Management App',
-    description: 'Full-featured productivity app with drag & drop functionality, priority levels, deadline tracking, team collaboration, and local storage persistence. Inspired by modern productivity tools like Notion and Trello.',
-    tags: ['React', 'LocalStorage', 'Drag & Drop', 'CSS Grid', 'Context API'],
-    repo: 'https://github.com/yourusername/task-manager',
-    demo: 'https://yourtaskapp.netlify.app',
+    title: 'Cybersecurity Threat Intelligence Database',
+    description: 'Developed a threat intelligence platform for real-time malware analysis and incident tracking. Integrated external APIs and predictive analytics to prioritize threats and generate actionable security insights.',
+    tags: ['Python', 'React.js', 'PostgreSQL', 'SQL/NoSQL', 'REST APIs'],
+    repo: 'https://github.com/govindaboob/threat-intelligence',
+    demo: 'https://threat-intelligence.vercel.app',
     category: 'webapp',
-    icon: '✅'
+    icon: '🔐'
   },
   {
-    title: 'Creative Agency Landing',
-    description: 'Stunning landing page for a creative agency featuring smooth scroll animations, interactive galleries, testimonials carousel, and conversion-optimized contact forms. Perfect blend of creativity and functionality.',
-    tags: ['HTML5', 'SCSS', 'JavaScript', 'GSAP', 'Responsive'],
-    repo: 'https://github.com/yourusername/agency-landing',
-    demo: 'https://youragency.github.io',
-    category: 'landing',
-    icon: '🎆'
-  },
-  {
-    title: 'Weather Forecast App',
-    description: 'Beautiful weather application with location-based forecasting, 7-day predictions, interactive maps, and dynamic backgrounds that change based on weather conditions. Integrates with multiple weather APIs.',
-    tags: ['JavaScript', 'Weather API', 'CSS Animations', 'Geolocation', 'PWA'],
-    repo: 'https://github.com/yourusername/weather-app',
-    demo: 'https://yourweather.vercel.app',
+    title: 'Blockchain Supply Chain Tracking Platform',
+    description: 'Developed a blockchain-based supply chain tracking platform using smart contracts for secure and transparent record management. Integrated machine learning–based demand forecasting and real-time alerts, with an interactive dashboard to visualize shipments, inventory, and predictive insights.',
+    tags: ['Python', 'React.js', 'Solidity', 'Blockchain', 'Smart Contracts'],
+    repo: 'https://github.com/govindaboob/blockchain-supply-chain',
+    demo: 'https://blockchain-supply-chain.vercel.app',
     category: 'webapp',
-    icon: '☁️'
+    icon: '⛓️'
   },
   {
-    title: 'Code Snippet Manager',
-    description: 'Developer tool for organizing and sharing code snippets with syntax highlighting, search functionality, tags, and export options. Perfect for developers who want to keep their code organized and accessible.',
-    tags: ['React', 'Node.js', 'MongoDB', 'Syntax Highlighting', 'Search'],
-    repo: 'https://github.com/yourusername/snippet-manager',
-    demo: 'https://yoursnippets.herokuapp.com',
-    category: 'tool',
+    title: 'Emotion Detection Using Voice Recognition',
+    description: 'Built a voice-based emotion detection system by extracting audio features and training machine learning and deep learning models. Enabled real-time emotion classification through an interactive Streamlit interface.',
+    tags: ['TensorFlow', 'PyTorch', 'Librosa', 'PyAudio', 'Streamlit'],
+    repo: 'https://github.com/govindaboob/voice-emotion-detection',
+    demo: 'https://voice-emotion.vercel.app',
+    category: 'webapp',
+    icon: '🎙'
+  },
+  {
+    title: 'Rent-A-Tech',
+    description: 'Rent-A-Tech is a web-based platform that helps college students and individuals easily rent technology items such as projectors, cameras, and other electronic equipment. It simplifies the rental process by providing real-time availability, transparent rental durations, and efficient item management, making access to technology affordable and hassle-free.',
+    tags: ['React', 'Node.js', 'MongoDB', 'Express', 'Real-time Updates'],
+    repo: 'https://github.com/govindaboob/rent-a-tech',
+    demo: 'https://rent-a-tech.vercel.app',
+    category: 'webapp',
     icon: '💻'
   }
 ]

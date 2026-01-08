@@ -64,7 +64,7 @@ export default function CV() {
             </button>
             
             <a 
-              href="mailto:govinda.boob@example.com" 
+              href="mailto:govindaboob11@gmail.com" 
               className="group px-8 py-4 border-2 border-orange-400 text-orange-400 rounded-xl hover:bg-orange-400 hover:text-white transition-all duration-300 font-heading font-semibold hover-lift"
             >
               <span className="flex items-center">

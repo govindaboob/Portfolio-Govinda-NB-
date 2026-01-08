@@ -2,9 +2,8 @@ import React, { useState } from 'react'
 
 const socialLinks = [
   { name: 'GitHub', icon: 'github', url: 'https://github.com/govindaboob', color: 'from-gray-600 to-gray-900' },
-  { name: 'LinkedIn', icon: 'linkedin', url: 'https://linkedin.com/in/govinda-boob', color: 'from-blue-600 to-blue-800' },
-  { name: 'Twitter', icon: 'twitter', url: 'https://twitter.com/govindaboob', color: 'from-sky-500 to-sky-700' },
-  { name: 'Email', icon: 'email', url: 'mailto:govinda.boob@example.com', color: 'from-rose-500 to-rose-700' }
+  { name: 'LinkedIn', icon: 'linkedin', url: 'https://www.linkedin.com/in/govindanb/', color: 'from-blue-600 to-blue-800' },
+  { name: 'Email', icon: 'email', url: 'mailto:govindaboob11@gmail.com', color: 'from-rose-500 to-rose-700' }
 ]
 
 const SocialIcon = ({ icon }) => {
@@ -19,12 +18,6 @@ const SocialIcon = ({ icon }) => {
       return (
         <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
           <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-        </svg>
-      )
-    case 'twitter':
-      return (
-        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
         </svg>
       )
     case 'email':
@@ -107,7 +100,7 @@ export default function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     className="w-full px-6 py-4 bg-white/10 backdrop-blur-sm border-2 border-indigo-300/30 rounded-xl text-white placeholder-indigo-300 focus:border-purple-400 focus:bg-white/20 transition-all duration-300 font-body"
-                    placeholder="your.email@example.com"
+                    placeholder="Enter your email address"
                     required
                   />
                 </div>
@@ -160,7 +153,7 @@ export default function Contact() {
               <div className="glass-dark rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 delay-300">
                 <h3 className="font-display text-2xl font-bold mb-6 text-gradient-galaxy">Get in Touch</h3>
                 <div className="space-y-4">
-                  <a href="mailto:govinda.boob@example.com" className="group flex items-center p-4 bg-white/10 rounded-xl hover:bg-white/20 transition-all duration-300 hover-lift">
+                  <a href="mailto:govindaboob11@gmail.com" className="group flex items-center p-4 bg-white/10 rounded-xl hover:bg-white/20 transition-all duration-300 hover-lift">
                     <div className="p-3 bg-gradient-to-r from-rose-500 to-pink-600 rounded-xl mr-4 group-hover:scale-110 transition-transform duration-300">
                       <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -168,7 +161,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <div className="font-heading font-semibold text-white group-hover:text-pink-300 transition-colors">Email Me</div>
-                      <div className="font-mono text-sm text-indigo-300">govinda.boob@example.com</div>
+                      <div className="font-mono text-sm text-indigo-300">govindaboob11@gmail.com</div>
                     </div>
                   </a>
                   

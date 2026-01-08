@@ -30,24 +30,30 @@ const skillCategories = [
     icon: "🛠",
     color: "from-indigo-400 to-purple-500",
     skills: ["Streamlit (ML UI Development)", "WebRTC (Real-time Streaming)", "API Integration & Backend Services"]
+  },
+  {
+    title: "Core Concepts",
+    icon: "🧠",
+    color: "from-emerald-400 to-teal-500",
+    skills: ["Operating Systems", "Computer Networks", "Database Management","DSA"]
   }
 ]
 
 export default function About() {
   return (
-    <section id="about" className="relative bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-hidden min-h-screen">
+    <section id="about" className="relative bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-hidden min-h-screen w-full">
       {/* Animated Background */}
       <div className="absolute inset-0 bg-stars opacity-30"></div>
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 w-full h-full">
         <div className="absolute top-20 left-10 w-64 h-64 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-full blur-3xl animate-pulse-slow"></div>
         <div className="absolute bottom-32 right-20 w-48 h-48 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-full blur-3xl animate-float"></div>
         <div className="absolute top-1/2 left-1/3 w-32 h-32 bg-gradient-to-br from-green-500/15 to-emerald-500/15 rounded-full blur-2xl animate-morphing"></div>
       </div>
       
-      {/* Floating Elements */}
-      <div className="absolute top-1/4 right-1/4 w-3 h-3 bg-white rounded-full animate-sparkle"></div>
-      <div className="absolute top-3/4 left-1/5 w-2 h-2 bg-purple-300 rounded-full animate-sparkle delay-700"></div>
-      <div className="absolute top-1/2 right-1/6 w-1.5 h-1.5 bg-cyan-300 rounded-full animate-sparkle delay-1000"></div>
+      {/* Floating Elements - Repositioned to avoid sports section */}
+      <div className="absolute top-1/6 right-1/3 w-2 h-2 bg-purple-400/40 rounded-full animate-sparkle opacity-70"></div>
+      <div className="absolute top-1/5 left-1/6 w-1.5 h-1.5 bg-cyan-400/40 rounded-full animate-sparkle delay-700 opacity-60"></div>
+      <div className="absolute top-1/8 right-1/5 w-1 h-1 bg-pink-400/50 rounded-full animate-sparkle delay-1000 opacity-50"></div>
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-20 lg:py-32 pt-24">
         {/* Header */}
@@ -62,19 +68,19 @@ export default function About() {
                 Code enthusiast who loves connecting with people and learning from every conversation
               </p>
               <div className="mt-6 flex items-center justify-center space-x-4">
-                <div className="w-12 h-px bg-gradient-to-r from-transparent to-white/30"></div>
-                <div className="w-2 h-2 rounded-full bg-white/40"></div>
-                <div className="w-12 h-px bg-gradient-to-l from-transparent to-white/30"></div>
+                <div className="w-12 h-px bg-gradient-to-r from-transparent to-purple-300/30"></div>
+                <div className="w-2 h-2 rounded-full bg-purple-300/40"></div>
+                <div className="w-12 h-px bg-gradient-to-l from-transparent to-purple-300/30"></div>
               </div>
             </div>
           </div>
         </div>
 
         {/* Main Content */}
-        <div className="space-y-16">
+        <div className="space-y-12">
           {/* Personal Introduction */}
           <div className="animate-slideInUp">
-            <div className="space-y-8">
+            <div className="space-y-6">
               {/* Header Section */}
               <div className="text-center">
                 <h3 className="font-display text-4xl font-bold mb-4 text-cyan-300">
@@ -83,7 +89,7 @@ export default function About() {
               </div>
               
               {/* Main Info Grid */}
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-0">
                 {/* Education */}
                 <div className="bg-gradient-to-br from-purple-600/20 to-purple-800/20 rounded-2xl p-6 border border-purple-400/30 hover:border-purple-400/50 transition-all duration-300 hover:transform hover:scale-105">
                   <div className="text-center">
@@ -137,7 +143,7 @@ export default function About() {
                     <span className="bg-pink-500/20 text-pink-300 px-4 py-2 rounded-full border border-pink-400/30 text-sm font-semibold">Intelligent Systems</span>
                   </div>
                 </div>
-                <p className="text-center text-gray-300 max-w-3xl mx-auto">
+                <p className="text-center text-gray-300 max-w-3xl mx-auto mb-0">
                   Combining technical expertise with leadership skills from sports to build meaningful solutions that make a real impact.
                 </p>
               </div>
@@ -146,7 +152,7 @@ export default function About() {
 
           {/* Expertise Areas */}
           <div className="animate-fadeInUp delay-300">
-            <div className="text-center mb-12">
+            <div className="text-center mb-8">
               <h3 className="font-display text-4xl font-bold mb-4 text-purple-300">
                 🚀 Areas of Expertise
               </h3>
@@ -190,7 +196,7 @@ export default function About() {
 
           {/* Skills Section */}
           <div className="animate-slideInUp delay-500">
-            <div className="text-center mb-12">
+            <div className="text-center mb-8">
               <h3 className="font-display text-4xl font-bold mb-4 text-pink-300">
                 🔹 Technical Skills
               </h3>
@@ -228,6 +234,62 @@ export default function About() {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+
+          {/* Achievements & Certifications */}
+          <div className="animate-fadeInUp delay-700">
+            <div className="text-center mb-10">
+              <h3 className="font-display text-4xl font-bold mb-4 text-transparent bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text">
+                🏆 Achievements & Certifications
+              </h3>
+              <p className="text-xl text-gray-300 font-medium tracking-wide">
+                Professional certifications and continuous learning
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* NPTEL Data Science Certification */}
+              <div className="glass-dark rounded-xl p-6 hover-lift transition-all duration-300 group border border-cyan-400/20 hover:border-cyan-400/40">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 flex items-center justify-center text-white text-xl">
+                    📊
+                  </div>
+                  <div>
+                    <h4 className="font-display text-lg font-bold text-cyan-300 group-hover:text-cyan-200 transition-colors">
+                      Data Science for Engineers
+                    </h4>
+                    <p className="text-orange-300 font-semibold text-sm">NPTEL</p>
+                  </div>
+                  <span className="ml-auto bg-green-500/20 text-green-300 px-3 py-1 rounded-full text-xs font-semibold border border-green-400/30">
+                    Certified
+                  </span>
+                </div>
+                <p className="text-gray-300 leading-relaxed">
+                  Applied data analysis and visualization for business insights
+                </p>
+              </div>
+
+              {/* NPTEL Edge Computing Certification */}
+              <div className="glass-dark rounded-xl p-6 hover-lift transition-all duration-300 group border border-purple-400/20 hover:border-purple-400/40">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center text-white text-xl">
+                    ⚡
+                  </div>
+                  <div>
+                    <h4 className="font-display text-lg font-bold text-purple-300 group-hover:text-purple-200 transition-colors">
+                      Edge Computing
+                    </h4>
+                    <p className="text-orange-300 font-semibold text-sm">NPTEL</p>
+                  </div>
+                  <span className="ml-auto bg-green-500/20 text-green-300 px-3 py-1 rounded-full text-xs font-semibold border border-green-400/30">
+                    Certified
+                  </span>
+                </div>
+                <p className="text-gray-300 leading-relaxed">
+                  Real-time analytics and distributed processing for BI systems
+                </p>
+              </div>
             </div>
           </div>
 

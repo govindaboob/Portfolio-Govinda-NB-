@@ -259,20 +259,20 @@ body {
 
 @keyframes sparkle {
   0%, 100% {
-    opacity: 0.3;
-    transform: scale(0.8) rotate(0deg);
+    opacity: 0.2;
+    transform: scale(0.9) rotate(0deg);
   }
   25% {
-    opacity: 1;
-    transform: scale(1.2) rotate(90deg);
+    opacity: 0.4;
+    transform: scale(1.05) rotate(90deg);
   }
   50% {
-    opacity: 0.7;
+    opacity: 0.3;
     transform: scale(1) rotate(180deg);
   }
   75% {
-    opacity: 1;
-    transform: scale(1.3) rotate(270deg);
+    opacity: 0.4;
+    transform: scale(1.05) rotate(270deg);
   }
 }
 
@@ -398,7 +398,7 @@ body {
 }
 
 .animate-sparkle {
-  animation: sparkle 2s ease-in-out infinite;
+  animation: sparkle 4s ease-in-out infinite;
 }
 
 .animate-bounce-in {
@@ -636,4 +636,141 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(45deg, #5a67d8, #6b46c1);
+}
+
+/* Project Animation Keyframes */
+@keyframes scan {
+  0% { left: 0; width: 0; }
+  50% { left: 0; width: 100%; }
+  100% { left: 100%; width: 0; }
+}
+
+@keyframes sound-wave {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(2.5); }
+}
+
+@keyframes scan-vertical {
+  0% { top: 0; opacity: 1; }
+  50% { top: 50%; opacity: 0.8; }
+  100% { top: 100%; opacity: 0; }
+}
+
+@keyframes scan-horizontal {
+  0% { left: 0; opacity: 1; }
+  50% { left: 50%; opacity: 0.8; }
+  100% { left: 100%; opacity: 0; }
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scaleY(1); }
+  25% { transform: scaleY(1.8); }
+  50% { transform: scaleY(0.8); }
+  75% { transform: scaleY(1.4); }
+}
+
+@keyframes blink-stress {
+  0%, 90%, 100% { height: 4px; }
+  5%, 10% { height: 1px; }
+}
+
+@keyframes stress-mouth {
+  0%, 100% { border-radius: 50%; transform: scaleY(1); }
+  25% { border-radius: 50% 50% 0 0; transform: scaleY(0.8); }
+  50% { border-radius: 0 0 50% 50%; transform: scaleY(0.6); }
+  75% { border-radius: 50%; transform: scaleY(0.9); }
+}
+
+@keyframes ecg-wave {
+  0% { stroke-dasharray: 0 1000; }
+  100% { stroke-dasharray: 1000 0; }
+}
+
+@keyframes ecg-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes matrix-fall {
+  0% { transform: translateY(-100%); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+@keyframes security-scan {
+  0%, 100% { opacity: 0.1; }
+  50% { opacity: 0.4; }
+}
+
+@keyframes draw-chart {
+  0% { stroke-dasharray: 0 100; }
+  100% { stroke-dasharray: 100 0; }
+}
+
+@keyframes grow-bar {
+  0% { height: 0; }
+  100% { height: var(--target-height); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Project Animation Classes */
+.animate-scan {
+  animation: scan 2s ease-in-out infinite;
+}
+
+.animate-sound-wave {
+  animation: sound-wave 0.8s ease-in-out infinite alternate;
+}
+
+.animate-scan-vertical {
+  animation: scan-vertical 3s ease-in-out infinite;
+}
+
+.animate-scan-horizontal {
+  animation: scan-horizontal 2.5s ease-in-out infinite;
+}
+
+.animate-heartbeat {
+  animation: heartbeat 1.2s ease-in-out infinite;
+}
+
+.animate-blink-stress {
+  animation: blink-stress 3s ease-in-out infinite;
+}
+
+.animate-stress-mouth {
+  animation: stress-mouth 4s ease-in-out infinite;
+}
+
+.animate-ecg-wave {
+  animation: ecg-wave 3s ease-in-out infinite;
+}
+
+.animate-ecg-pulse {
+  animation: ecg-pulse 1.5s ease-in-out infinite;
+}
+
+.animate-matrix-fall {
+  animation: matrix-fall linear infinite;
+}
+
+.animate-security-scan {
+  animation: security-scan 2s ease-in-out infinite;
+}
+
+.animate-draw-chart {
+  animation: draw-chart 3s ease-in-out infinite;
+}
+
+.animate-grow-bar {
+  animation: grow-bar 1.5s ease-out forwards;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
 }

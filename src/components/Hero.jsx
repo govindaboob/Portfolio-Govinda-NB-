@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 export default function Hero() {
   const [scrollProgress, setScrollProgress] = useState(0)
   const name = "Govinda Nawalkishor Boob"
+  const mobileNameLines = ["Govinda", "Nawalkishor", "Boob"]
 
   useEffect(() => {
     // Optimized scroll handling for better responsiveness
@@ -80,6 +81,31 @@ export default function Hero() {
       )
     })
   }
+
+  const renderMobileName = () => {
+    return mobileNameLines.map((line, lineIndex) => (
+      <div key={lineIndex} className="block">
+        {line.split('').map((letter, index) => {
+          const globalIndex = mobileNameLines.slice(0, lineIndex).join('').length + lineIndex + index
+          const letterStyle = calculateLetterTransform(globalIndex)
+          
+          return (
+            <span
+              key={`${lineIndex}-${index}`}
+              className="text-gradient-fire letter-scroll-fly"
+              style={{
+                position: 'relative',
+                zIndex: 50,
+                ...letterStyle
+              }}
+            >
+              {letter}
+            </span>
+          )
+        })}
+      </div>
+    ))
+  }
   return (
     <section id="home" className="relative bg-gradient-to-br from-violet-100 via-indigo-50 via-purple-100 to-pink-50 overflow-hidden min-h-screen flex items-center">
       {/* Enhanced Animated Background Elements */}
@@ -121,10 +147,15 @@ export default function Hero() {
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 py-16 sm:py-20 lg:py-24 text-center">
         <div className="animate-fadeInDown">
           <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 sm:mb-8 leading-tight">
-            Hi, I'm{' '}
+            <div className="mb-2">Hi, I'm</div>
             <span className="relative inline-block" id="hero-name">
-              <span className="hero-name-enhanced animate-gradient hover-glow transition-all duration-500 hover:scale-110 hover:rotate-1 block sm:inline hero-name-container">
+              {/* Desktop version - single line */}
+              <span className="hero-name-enhanced animate-gradient hover-glow transition-all duration-500 hover:scale-110 hover:rotate-1 hidden sm:inline hero-name-container">
                 {renderScrollDrivenName()}
+              </span>
+              {/* Mobile version - 3 lines */}
+              <span className="hero-name-enhanced animate-gradient hover-glow transition-all duration-500 hover:scale-110 hover:rotate-1 sm:hidden hero-name-container">
+                {renderMobileName()}
               </span>
               <div className={`absolute -inset-4 bg-gradient-to-r from-purple-500/30 via-pink-500/30 to-orange-500/30 blur-2xl animate-pulse-slow transition-all duration-300 ${
                 scrollProgress > 0.4 ? 'opacity-0' : 'opacity-100'

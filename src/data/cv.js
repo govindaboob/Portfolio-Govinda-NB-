@@ -3,11 +3,11 @@ const cv = {
   title: 'Frontend Developer & UI/UX Enthusiast',
   summary: 'Passionate frontend developer with 2+ years of experience building responsive, user-centered web applications. Specializes in React ecosystem, modern CSS, and performance optimization. Strong advocate for accessibility and clean, maintainable code.',
   contact: {
-    email: 'govinda.boob@example.com',
+    email: 'govindaboob11@gmail.com',
     phone: '+1 (555) 123-4567',
     location: 'San Francisco, CA',
     website: 'https://govindaboob.dev',
-    linkedin: 'https://linkedin.com/in/govindaboob',
+    linkedin: 'https://www.linkedin.com/in/govindanb/',
     github: 'https://github.com/govindaboob'
   },
   experience: [
