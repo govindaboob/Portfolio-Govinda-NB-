@@ -1,10 +1,10 @@
 import React from 'react'
 
 const quickLinks = [
-  { name: 'About', href: '#about' },
-  { name: 'Projects', href: '#projects' },
-  { name: 'CV', href: '#cv' },
-  { name: 'Contact', href: '#contact' }
+  { name: 'About', id: 'about' },
+  { name: 'Projects', id: 'projects' },
+  { name: 'CV', id: 'cv' },
+  { name: 'Contact', id: 'contact' }
 ]
 
 const socialLinks = [
@@ -40,6 +40,11 @@ const socialLinks = [
 export default function Footer() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  const navigateToSection = (sectionId) => {
+    // Use the same navigation system as the navbar
+    window.dispatchEvent(new CustomEvent('navigateToSection', { detail: sectionId }))
   }
 
   return (
@@ -93,13 +98,13 @@ export default function Footer() {
               <h4 className="font-heading text-lg font-semibold mb-6 text-white">Quick Links</h4>
               <nav className="space-y-3">
                 {quickLinks.map((link) => (
-                  <a
+                  <button
                     key={link.name}
-                    href={link.href}
-                    className="block font-body text-gray-300 hover:text-white transition-colors duration-300 hover:translate-x-1 transform"
+                    onClick={() => navigateToSection(link.id)}
+                    className="block font-body text-gray-300 hover:text-white transition-colors duration-300 hover:translate-x-1 transform text-left cursor-pointer"
                   >
                     {link.name}
-                  </a>
+                  </button>
                 ))}
               </nav>
             </div>

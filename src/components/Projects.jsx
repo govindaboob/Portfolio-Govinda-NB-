@@ -17,12 +17,15 @@ export default function Projects() {
     ? projects 
     : projects.filter(p => p.category === activeFilter)
 
-  // Function to open project details in a new window/tab
+  // Function to open project details in the same tab
   const openProjectDetails = (project) => {
+    // Store the current page content for navigation back
+    window.portfolioContent = document.documentElement.outerHTML
+    
     const projectDetailsHTML = generateProjectDetailsHTML(project)
-    const newWindow = window.open('', '_blank')
-    newWindow.document.write(projectDetailsHTML)
-    newWindow.document.close()
+    document.open()
+    document.write(projectDetailsHTML)
+    document.close()
   }
 
   return (
@@ -72,13 +75,13 @@ export default function Projects() {
           {filteredProjects.map((project, index) => (
             <div 
               key={project.title}
-              className={`animate-fadeInUp ${index % 2 === 0 ? 'lg:grid-cols-2' : 'lg:grid-cols-2'} grid gap-8 lg:gap-12 items-center`}
+              className="animate-fadeInUp grid gap-8 lg:grid-cols-2 lg:gap-12 items-center"
               style={{animationDelay: `${400 + index * 200}ms`}}
               onMouseEnter={() => setHoveredProject(index)}
               onMouseLeave={() => setHoveredProject(null)}
             >
               {/* Project Image/Demo */}
-              <div className={`${index % 2 === 0 ? 'order-1' : 'order-2'} relative group`}>
+              <div className={`order-1 ${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'} relative group`}>
                 <div className="relative overflow-hidden rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-500">
                   <div className="aspect-video bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex items-center justify-center relative">
                     {/* Project-specific animated visuals */}
@@ -472,7 +475,7 @@ export default function Projects() {
               </div>
 
               {/* Project Info */}
-              <div className={`${index % 2 === 0 ? 'order-2' : 'order-1'} space-y-6`}>
+              <div className={`order-2 ${index % 2 === 0 ? 'lg:order-2' : 'lg:order-1'} space-y-6`}>
                 <div>
                   <h3 className="font-display text-3xl lg:text-4xl font-bold text-gray-800 mb-4 group-hover:text-emerald-600 transition-colors">
                     {project.title}
@@ -883,7 +886,15 @@ function generateProjectDetailsHTML(project) {
     </style>
 </head>
 <body>
-    <button class="btn btn-secondary back-button" onclick="window.close()">
+    <button class="btn btn-secondary back-button" onclick="
+        if (window.portfolioContent) {
+            document.open();
+            document.write(window.portfolioContent);
+            document.close();
+        } else {
+            window.history.back();
+        }
+    ">
         ← Back to Portfolio
     </button>
     
