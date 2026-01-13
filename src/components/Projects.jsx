@@ -4,9 +4,11 @@ import projects from '../data/projects'
 
 const categories = [
   { name: 'All', filter: 'all' },
-  { name: 'Web Apps', filter: 'webapp' },
-  { name: 'Landing Pages', filter: 'landing' },
-  { name: 'Tools', filter: 'tool' }
+  { name: 'AI/ML', filter: 'ai-ml' },
+  { name: 'Blockchain', filter: 'blockchain' },
+  { name: 'Cybersecurity', filter: 'security' },
+  { name: 'Healthcare', filter: 'healthcare' },
+  { name: 'Web Platform', filter: 'web-platform' }
 ]
 
 export default function Projects() {

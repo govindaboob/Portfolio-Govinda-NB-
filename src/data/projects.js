@@ -5,7 +5,7 @@ const projects = [
     tags: ['Python', 'MATLAB', 'ECG Sensor', 'GSR Sensor', 'Machine Learning'],
     repo: 'https://github.com/govindaboob/health-monitoring',
     demo: 'https://health-monitoring.vercel.app',
-    category: 'webapp',
+    category: 'healthcare',
     icon: '🏥'
   },
   {
@@ -14,7 +14,7 @@ const projects = [
     tags: ['TensorFlow', 'OpenCV', 'SpeechRecognition', 'Streamlit', 'WebRTC'],
     repo: 'https://github.com/govindaboob/stress-monitoring',
     demo: 'https://stress-monitoring.vercel.app',
-    category: 'webapp',
+    category: 'ai-ml',
     icon: '😌'
   },
   {
@@ -23,7 +23,7 @@ const projects = [
     tags: ['Python', 'React.js', 'PostgreSQL', 'SQL/NoSQL', 'REST APIs'],
     repo: 'https://github.com/govindaboob/threat-intelligence',
     demo: 'https://threat-intelligence.vercel.app',
-    category: 'webapp',
+    category: 'security',
     icon: '🔐'
   },
   {
@@ -32,7 +32,7 @@ const projects = [
     tags: ['Python', 'React.js', 'Solidity', 'Blockchain', 'Smart Contracts'],
     repo: 'https://github.com/govindaboob/blockchain-supply-chain',
     demo: 'https://blockchain-supply-chain.vercel.app',
-    category: 'webapp',
+    category: 'blockchain',
     icon: '⛓️'
   },
   {
@@ -41,7 +41,7 @@ const projects = [
     tags: ['TensorFlow', 'PyTorch', 'Librosa', 'PyAudio', 'Streamlit'],
     repo: 'https://github.com/govindaboob/voice-emotion-detection',
     demo: 'https://voice-emotion.vercel.app',
-    category: 'webapp',
+    category: 'ai-ml',
     icon: '🎙'
   },
   {
@@ -50,7 +50,7 @@ const projects = [
     tags: ['React', 'Node.js', 'MongoDB', 'Express', 'Real-time Updates'],
     repo: 'https://github.com/govindaboob/rent-a-tech',
     demo: 'https://rent-a-tech.vercel.app',
-    category: 'webapp',
+    category: 'web-platform',
     icon: '💻'
   }
 ]

@@ -16,9 +16,12 @@ export default function CV() {
   const [activeTab, setActiveTab] = useState('overview')
   
   const onDownload = () => {
+    // Open PDF in new tab first to ensure it loads, then trigger download
     const link = document.createElement('a')
     link.href = '/Govinda N B Resume.pdf'
-    link.download = 'Govinda N B Resume.pdf'
+    link.download = 'Govinda_N_B_Resume.pdf'
+    link.target = '_blank'
+    link.rel = 'noopener noreferrer'
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
