@@ -10,8 +10,9 @@ export default function Hero() {
     // Optimized scroll handling for better responsiveness
     const handleScroll = () => {
       const scrollPosition = window.scrollY
-      const maxScroll = 500 // Tighter animation range for better control
-      const minScroll = 80 // Start earlier for smoother transition
+      const isMobile = window.innerWidth < 1024
+      const maxScroll = isMobile ? 300 : 500 // Lower threshold for mobile
+      const minScroll = isMobile ? 20 : 80 // Start much earlier on mobile
       
       // Calculate progress (0 to 1) with easing
       let progress = 0
@@ -23,6 +24,9 @@ export default function Hero() {
       
       setScrollProgress(progress)
     }
+    
+    // Initial call to set the scroll progress
+    handleScroll()
     
     // Use passive listener for better performance
     window.addEventListener('scroll', handleScroll, { passive: true })
@@ -125,7 +129,7 @@ export default function Hero() {
                 ...letterStyle
               }}
             >
-              {letter}
+              {letter === ' ' ? '\u00A0' : letter}
             </span>
           )
         })}
@@ -133,7 +137,7 @@ export default function Hero() {
     ))
   }
   return (
-    <section id="home" className="relative bg-gradient-to-br from-violet-100 via-indigo-50 via-purple-100 to-pink-50 overflow-hidden min-h-screen flex items-center">
+    <section id="home" className="relative bg-gradient-to-br from-violet-100 via-indigo-50 via-purple-100 to-pink-50 overflow-hidden lg:min-h-screen flex items-center">
       {/* Enhanced Animated Background Elements */}
       <div className="absolute inset-0 bg-dots opacity-20"></div>
       <div className="absolute inset-0 bg-stars opacity-30"></div>
@@ -170,18 +174,18 @@ export default function Hero() {
       <div className="absolute top-32 right-10 w-32 h-32 bg-gradient-to-br from-indigo-200/40 to-purple-200/40 animate-morphing"></div>
       <div className="absolute bottom-32 left-5 w-24 h-24 bg-gradient-to-br from-pink-200/40 to-orange-200/40 animate-morphing" style={{animationDelay: '2s'}}></div>
       
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12 lg:py-24">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 pt-20 pb-8 sm:pt-24 sm:pb-12 lg:py-24">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-16">
-          {/* Mobile: Vertical layout - Image above, name below */}
-          <div className="flex flex-col items-center text-center lg:hidden w-full space-y-4">
-            {/* Mobile Image - Top */}
+          {/* Mobile: Horizontal layout - Image left, name right */}
+          <div className="flex flex-row items-center justify-center lg:hidden w-full gap-4">
+            {/* Mobile Image - Left */}
             <div className="flex-shrink-0">
               <div className="relative group animate-fadeInDown delay-300">
                 {/* Subtle outer glow */}
                 <div className="absolute -inset-2 bg-gradient-to-r from-indigo-200/30 via-purple-200/30 to-pink-200/30 rounded-full blur-lg opacity-70 group-hover:opacity-100 transition-all duration-700"></div>
                 
                 {/* Main Image Container - Centered for mobile */}
-                <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden border-3 border-white/60 backdrop-blur-sm shadow-xl transition-all duration-700 animate-gentle-float">
+                <div className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-full overflow-hidden border-3 border-white/60 backdrop-blur-sm shadow-xl transition-all duration-700 animate-gentle-float">
                   <img 
                     src="/govinda-boob.JPG" 
                     alt="Govinda Nawalkishor Boob"
@@ -202,15 +206,14 @@ export default function Hero() {
               </div>
             </div>
             
-            {/* Mobile Content - Below image */}
-            <div className="w-full">
+            {/* Mobile Content - Right side */}
+            <div className="flex-1 text-left">
               <div className="animate-fadeInUp delay-500">
-                <div className="mb-2 text-lg sm:text-xl text-gray-600 font-medium">Hi, I'm</div>
-                <h1 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
+                <div className="mb-1 text-base sm:text-lg text-gray-600 font-medium">Hi, I'm</div>
+                <h1 className="font-display text-xl sm:text-2xl font-bold leading-tight">
                   <span className="relative inline-block" id="hero-name-mobile">
-                    <span className="hero-name-enhanced animate-gradient hover-glow transition-all duration-500 block">
-                      <div className="text-gradient-fire">Govinda</div>
-                      <div className="text-gradient-fire">Nawalkishor Boob</div>
+                    <span className="hero-name-enhanced animate-gradient hover-glow transition-all duration-500 block hero-name-container">
+                      {renderMobileName()}
                     </span>
                   </span>
                 </h1>
@@ -286,14 +289,14 @@ export default function Hero() {
           {/* Mobile: Description and buttons */}
           <div className="w-full text-center lg:hidden">
             <div className="animate-fadeInUp delay-700">
-              <p className="font-heading text-base sm:text-lg text-gray-600 mb-6 leading-relaxed max-w-md mx-auto">
+              <p className="font-heading text-base sm:text-lg text-gray-600 mb-4 leading-relaxed max-w-md mx-auto">
                 A passionate{' '}
                 <span className="font-mono bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent font-semibold">software developer</span>{' '}
                 turning ideas into delightful web experiences.
               </p>
             </div>
             
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 animate-bounce-in delay-900">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5 animate-bounce-in delay-900">
               <button 
                 onClick={() => window.dispatchEvent(new CustomEvent('navigateToSection', { detail: 'projects' }))}
                 className="group w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white rounded-xl shadow-xl hover-glow hover-lift transition-all duration-500 font-heading font-semibold text-base animate-gradient"

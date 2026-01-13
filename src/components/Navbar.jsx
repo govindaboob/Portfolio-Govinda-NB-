@@ -37,15 +37,16 @@ export default function Navbar({ activeSection, setActiveSection }) {
       
       if (activeSection === 'home' || activeSection === 'about') {
         // For both home and about (same page), check scroll position
-        const minScroll = 250 // Match hero animation timing
-        const maxScroll = 420 // Tighter range for better sync
+        const isMobile = window.innerWidth < 1024
+        const minScroll = isMobile ? 80 : 250 // Faster on mobile to match hero animation
+        const maxScroll = isMobile ? 200 : 420 // Tighter range for mobile
         
         if (scrollPosition >= minScroll) {
           const rawProgress = (scrollPosition - minScroll) / (maxScroll - minScroll)
           // Apply same easing as hero for consistency
           const progress = Math.min(1 - Math.pow(1 - rawProgress, 3), 1)
           setNavOpacity(progress)
-          setShowNameInNav(progress > 0.2)
+          setShowNameInNav(progress > 0.1)
         } else {
           setNavOpacity(0)
           setShowNameInNav(false)

@@ -901,9 +901,39 @@ html {
   100% { stroke-dasharray: 1000 0; }
 }
 
+@keyframes ecg-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100px); }
+}
+
+@keyframes ecg-scroll-smooth {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-80px); }
+}
+
+@keyframes ecg-scroll-live {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-109px); }
+}
+
+@keyframes ecg-continuous {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-109px); }
+}
+
 @keyframes ecg-pulse {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.5; }
+}
+
+@keyframes scroll-up {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); opacity: 0.7; }
+}
+
+@keyframes blink-cursor {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
 }
 
 @keyframes matrix-fall {
@@ -931,6 +961,22 @@ html {
 @keyframes pulse-glow {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.5; }
+}
+
+@keyframes flow-particle {
+  0% { transform: translateX(0); opacity: 1; }
+  100% { transform: translateX(24px); opacity: 0; }
+}
+
+@keyframes progress {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+@keyframes slide-left {
+  0% { transform: translateX(20px); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateX(0); opacity: 0.7; }
 }
 
 /* Project Animation Classes */
@@ -966,8 +1012,44 @@ html {
   animation: ecg-wave 3s ease-in-out infinite;
 }
 
+.animate-ecg-scroll {
+  animation: ecg-scroll 3s linear infinite;
+}
+
+.animate-ecg-scroll-smooth {
+  animation: ecg-scroll-smooth 4s linear infinite;
+}
+
+.animate-ecg-scroll-live {
+  animation: ecg-scroll-live 3s linear infinite;
+}
+
+.animate-ecg-continuous {
+  animation: ecg-continuous 3s linear infinite;
+}
+
 .animate-ecg-pulse {
   animation: ecg-pulse 1.5s ease-in-out infinite;
+}
+
+.animate-scroll-up {
+  animation: scroll-up 2s ease-in-out infinite;
+}
+
+.animate-blink-cursor {
+  animation: blink-cursor 1s step-end infinite;
+}
+
+.animate-flow-particle {
+  animation: flow-particle 1.5s ease-in-out infinite;
+}
+
+.animate-progress {
+  animation: progress 2s ease-in-out forwards;
+}
+
+.animate-slide-left {
+  animation: slide-left 2s ease-in-out infinite;
 }
 
 .animate-matrix-fall {

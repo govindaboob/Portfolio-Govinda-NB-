@@ -71,7 +71,7 @@ export default function Footer() {
                   <span className="text-gradient-subtle">Govinda Boob</span>
                 </h3>
                 <p className="font-body text-gray-300 text-lg leading-relaxed max-w-md">
-                  Frontend Developer passionate about creating beautiful, functional, and user-centric digital experiences.
+                  Passionate Developer transforming ideas into elegant web solutions using cutting-edge technologies and best practices.
                 </p>
               </div>
               
@@ -155,12 +155,6 @@ export default function Footer() {
               </div>
               
               <div className="flex items-center space-x-6 text-sm delay-100">
-                <a href="#privacy" className="font-body text-gray-400 hover:text-white transition-colors duration-300">
-                  Privacy Policy
-                </a>
-                <a href="#terms" className="font-body text-gray-400 hover:text-white transition-colors duration-300">
-                  Terms of Service
-                </a>
                 <span className="font-mono text-gray-500 text-xs">
                   Made with ❤️ & React
                 </span>

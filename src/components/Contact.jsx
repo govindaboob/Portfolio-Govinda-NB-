@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import emailjs from '@emailjs/browser'
 
 const socialLinks = [
   { name: 'GitHub', icon: 'github', url: 'https://github.com/govindaboob', color: 'from-gray-600 to-gray-900' },
@@ -34,15 +35,72 @@ const SocialIcon = ({ icon }) => {
 export default function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' })
   const [isHovered, setIsHovered] = useState(false)
+  const [isSending, setIsSending] = useState(false)
+  const [status, setStatus] = useState({ type: '', message: '' })
+
+  // Initialize EmailJS
+  useEffect(() => {
+    emailjs.init('NQ_bBlh8fhD6t04Bn')
+  }, [])
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log('Form submitted:', formData)
-    // Handle form submission
+    setIsSending(true)
+    setStatus({ type: '', message: '' })
+
+    console.log('Form data:', formData) // Debug log
+
+    try {
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+        to_name: 'Govinda'
+      }
+
+      console.log('Sending with params:', templateParams) // Debug log
+      console.log('Service ID:', 'service_vj6lnll')
+      console.log('Template ID:', 'template_y61z0v9')
+
+      const result = await emailjs.send(
+        'service_vj6lnll',
+        'template_y61z0v9',
+        templateParams
+      )
+      
+      console.log('SUCCESS! Email sent:', result)
+      setStatus({
+        type: 'success',
+        message: '🎉 Message sent successfully! I\'ll get back to you soon.'
+      })
+      setFormData({ name: '', email: '', message: '' })
+    } catch (error) {
+      console.error('FULL ERROR OBJECT:', error)
+      console.error('Error status:', error.status)
+      console.error('Error text:', error.text)
+      console.error('Error message:', error.message)
+      
+      let errorMessage = '❌ Something went wrong. '
+      
+      if (error.text) {
+        errorMessage += `Error: ${error.text}`
+      } else if (error.message) {
+        errorMessage += `Error: ${error.message}`
+      } else {
+        errorMessage += 'Please check your internet connection or contact me via WhatsApp.'
+      }
+      
+      setStatus({
+        type: 'error',
+        message: errorMessage
+      })
+    } finally {
+      setIsSending(false)
+    }
   }
 
   return (
@@ -80,7 +138,7 @@ export default function Contact() {
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="delay-400">
-                  <label className="block font-heading font-semibold text-indigo-200 mb-3">Your Message</label>
+                  <label className="block font-heading font-semibold text-indigo-200 mb-3">Your Name</label>
                   <input
                     type="text"
                     name="name"
@@ -118,16 +176,38 @@ export default function Contact() {
                   />
                 </div>
                 
+                {/* Status Message */}
+                {status.message && (
+                  <div className={`p-4 rounded-xl font-body text-sm ${
+                    status.type === 'success' 
+                      ? 'bg-green-500/20 border border-green-400/50 text-green-200' 
+                      : 'bg-red-500/20 border border-red-400/50 text-red-200'
+                  }`}>
+                    {status.message}
+                  </div>
+                )}
+                
                 <button
                   type="submit"
+                  disabled={isSending}
                   onMouseEnter={() => setIsHovered(true)}
                   onMouseLeave={() => setIsHovered(false)}
-                  className="group w-full px-8 py-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white rounded-xl hover:from-indigo-700 hover:via-purple-700 hover:to-pink-700 transition-all duration-500 font-heading font-bold text-lg shadow-2xl hover-glow hover-lift delay-800"
+                  className={`group w-full px-8 py-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white rounded-xl hover:from-indigo-700 hover:via-purple-700 hover:to-pink-700 transition-all duration-500 font-heading font-bold text-lg shadow-2xl hover-glow hover-lift delay-800 ${
+                    isSending ? 'opacity-70 cursor-not-allowed' : ''
+                  }`}
                 >
                   <span className="flex items-center justify-center">
-                    {isHovered ? (
+                    {isSending ? (
                       <>
                         <svg className="mr-3 w-5 h-5 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        Sending...
+                      </>
+                    ) : isHovered ? (
+                      <>
+                        <svg className="mr-3 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
                         </svg>
                         Launch Message
