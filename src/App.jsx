@@ -31,6 +31,15 @@ export default function App() {
             aboutElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
           }
         }, 100)
+      } else if (section === 'experience') {
+        // Handle Experience section - scroll to it within About page
+        setActiveSection('about')
+        setTimeout(() => {
+          const experienceElement = document.getElementById('experience')
+          if (experienceElement) {
+            experienceElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
+          }
+        }, 100)
       } else {
         // For other sections, scroll to top
         window.scrollTo({ top: 0, behavior: 'instant' })
@@ -45,6 +54,7 @@ export default function App() {
     switch(activeSection) {
       case 'home':
       case 'about':
+      case 'experience':
         return (
           <>
             <Hero />

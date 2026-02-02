@@ -12,22 +12,10 @@ const cv = {
   },
   experience: [
     {
-      company: 'Personal Projects & Innovation',
-      role: 'AI/ML Developer & Full-Stack Engineer',
-      range: '2022 - Present',
-      description: 'Built end-to-end intelligent applications integrating machine learning models with web interfaces. Developed real-time health monitoring systems with ECG analysis, blockchain-based supply chain solutions, and computer vision applications. Specialized in combining ML models, APIs, and responsive web interfaces for practical impact.'
-    },
-    {
-      company: 'Academic Research & Development',
-      role: 'Student Researcher',
-      range: '2021 - Present',
-      description: 'Conducted research in artificial intelligence, machine learning, and computer vision. Applied data science techniques for business insights and implemented edge computing solutions for real-time analytics. Focused on transforming raw data—signals, images, audio—into meaningful insights.'
-    },
-    {
-      company: 'State Hockey Team',
-      role: 'State-Level Hockey Player',
-      range: '2018 - Present',
-      description: 'Represented state in competitive hockey, developing leadership, teamwork, and discipline. Applied strategic thinking and problem-solving skills both on the field and in technical projects. Balanced athletic excellence with academic pursuits.'
+      company: 'Center of Excellence (COE), RVCE - Cyber Range',
+      role: 'Cyber Security Intern',
+      range: 'September 2025 - December 2025',
+      description: 'Developed Email Guard System - An AI-powered email security system that detects phishing attempts and malicious content in real-time using machine learning. Gained hands-on experience with cybersecurity tools and techniques in a simulated cyber range environment. Implemented machine learning algorithms to identify and classify malicious email patterns with 94.2% accuracy.'
     }
   ],
   education: [
@@ -38,16 +26,26 @@ const cv = {
       details: 'Focus on Artificial Intelligence, Machine Learning, Database Management, Operating Systems, Computer Networks, and Data Structures & Algorithms'
     },
     {
-      school: 'NPTEL',
-      degree: 'Data Science for Engineers - Certified',
-      year: '2024',
-      details: 'Applied data analysis and visualization for business insights. Comprehensive coursework in statistical methods and data-driven decision making.'
+      school: 'Ramkrishna College, Paratwada',
+      degree: '12th Grade (HSC)',
+      year: '2021',
+      details: 'Maharashtra State Board | Percentage: 78.33%'
     },
     {
-      school: 'NPTEL',
-      degree: 'Edge Computing - Certified',
-      year: '2024',
-      details: 'Real-time analytics and distributed processing for business intelligence systems. Advanced concepts in edge computing architecture and implementation.'
+      school: 'Sarala Birla Academy, Bangalore',
+      degree: '10th Grade (ICSE)',
+      year: '2019',
+      details: 'ICSE Board | Percentage: 78.9%'
+    }
+  ],
+  publications: [
+    {
+      title: 'Multi-Layer Deep Learning Framework for Real-Time Phishing Detection with Explainability',
+      conference: 'IEEE International Conference on Electronics, Computing and Communication Technologies (ICOECA)',
+      year: '2026',
+      paperId: 'ICOECA-641',
+      status: 'Published',
+      description: 'Developed a novel multi-layer deep learning framework for detecting phishing attacks in real-time with explainable AI capabilities. The framework achieves high accuracy while providing transparency in decision-making processes.'
     }
   ],
   skills: [

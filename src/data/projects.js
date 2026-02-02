@@ -1,5 +1,14 @@
 const projects = [
   {
+    title: 'Email Guard – Multi-Layer Phishing Detection System',
+    description: 'Built an advanced phishing detection system using deep learning and machine learning models for real-time email security. Developed features for detecting URL obfuscation, homograph attacks, and malicious attachments. Achieved 94.2% accuracy with explainable AI predictions. Created a full-stack web application with FastAPI backend and React frontend, processing emails in under 0.3 seconds.',
+    tags: ['Deep Learning', 'DistilBERT', 'FastAPI', 'React', 'Next.js', 'SQLite', 'Cybersecurity', 'Explainable AI'],
+    repo: 'https://github.com/govindaboob/email-guard',
+    demo: 'https://email-guard.vercel.app',
+    category: 'security',
+    icon: '🛡️'
+  },
+  {
     title: 'Health Monitoring System',
     description: 'Developed a biomedical signal processing pipeline for ECG and GSR data using Python and MATLAB. Applied advanced filtering and feature extraction techniques, followed by a machine learning model for preliminary disease prediction with a focus on data accuracy and medical relevance.',
     tags: ['Python', 'MATLAB', 'ECG Sensor', 'GSR Sensor', 'Machine Learning'],

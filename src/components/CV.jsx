@@ -14,22 +14,11 @@ const CVSection = ({ title, icon, children, delay = 0 }) => (
 
 export default function CV() {
   const [activeTab, setActiveTab] = useState('overview')
-  
-  const onDownload = () => {
-    // Open PDF in new tab first to ensure it loads, then trigger download
-    const link = document.createElement('a')
-    link.href = '/Govinda N B Resume.pdf'
-    link.download = 'Govinda_N_B_Resume.pdf'
-    link.target = '_blank'
-    link.rel = 'noopener noreferrer'
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
-  }
 
   const tabs = [
     { id: 'overview', label: 'Overview', icon: '📊' },
     { id: 'experience', label: 'Experience', icon: '💼' },
+    { id: 'publications', label: 'Publications', icon: '📄' },
     { id: 'education', label: 'Education', icon: '🎓' },
     { id: 'skills', label: 'Skills', icon: '🚀' }
   ]
@@ -59,17 +48,20 @@ export default function CV() {
           </p>
           
           <div className="flex flex-wrap justify-center gap-4">
-            <button 
-              onClick={onDownload} 
+            <a
+              href="/Govinda%20N%20B%20Resume%20.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group px-8 py-4 bg-gradient-to-r from-orange-600 to-red-600 text-white rounded-xl hover:from-orange-700 hover:to-red-700 transition-all duration-300 font-heading font-semibold shadow-2xl hover-glow hover-lift"
             >
               <span className="flex items-center">
-                <svg className="mr-3 w-5 h-5 transform group-hover:translate-y-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                <svg className="mr-3 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                 </svg>
-                Download CV
+                View Resume PDF
               </span>
-            </button>
+            </a>
             
             <a
               href="mailto:govindaboob11@gmail.com?subject=Opportunity Discussion&body=Hi Govinda,%0D%0A%0D%0AI saw your CV and would like to discuss an opportunity with you."
@@ -166,6 +158,36 @@ export default function CV() {
                         <h4 className="font-heading text-xl font-semibold text-white group-hover:text-orange-300 transition-colors mb-2">{edu.degree}</h4>
                         <div className="font-body text-orange-300 mb-2">{edu.school}</div>
                         {edu.details && <p className="font-body text-gray-400 text-sm">{edu.details}</p>}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </CVSection>
+            </div>
+          )}
+
+          {activeTab === 'publications' && (
+            <div className="animate-fadeInUp">
+              <CVSection title="Research Publications" icon="📄">
+                <div className="space-y-6">
+                  {cv.publications.map((pub, index) => (
+                    <div key={pub.paperId} className={`group animate-slideInRight delay-${(index + 1) * 200}`}>
+                      <div className="p-6 bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-xl hover:from-orange-500/30 hover:to-red-500/30 transition-all duration-300 hover-lift border border-orange-400/30">
+                        <div className="flex items-start justify-between mb-3">
+                          <h4 className="font-heading text-xl font-bold text-white group-hover:text-orange-300 transition-colors flex-1">
+                            {pub.title}
+                          </h4>
+                          <span className="ml-4 px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-xs font-semibold border border-green-400/30">
+                            {pub.status}
+                          </span>
+                        </div>
+                        <div className="font-heading text-lg text-orange-300 mb-2">{pub.conference}</div>
+                        <div className="flex items-center gap-4 text-sm text-gray-400 mb-3">
+                          <span>📅 {pub.year}</span>
+                          <span>•</span>
+                          <span>🆔 {pub.paperId}</span>
+                        </div>
+                        <p className="font-body text-gray-300 leading-relaxed">{pub.description}</p>
                       </div>
                     </div>
                   ))}

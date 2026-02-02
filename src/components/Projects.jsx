@@ -113,6 +113,74 @@ export default function Projects() {
                 <div className="relative overflow-hidden rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-500">
                   <div className="aspect-video bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex items-center justify-center relative">
                     {/* Project-specific animated visuals */}
+                    {project.title === 'Email Guard – Multi-Layer Phishing Detection System' && (
+                      <div className="relative w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-900 via-purple-950 to-slate-900 overflow-hidden">
+                        {/* Background grid */}
+                        <div className="absolute inset-0 opacity-20">
+                          <div className="absolute inset-0" style={{
+                            backgroundImage: 'linear-gradient(rgba(139, 92, 246, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(139, 92, 246, 0.1) 1px, transparent 1px)',
+                            backgroundSize: '40px 40px'
+                          }}></div>
+                        </div>
+
+                        {/* Animated shield icon */}
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <div className="relative">
+                            {/* Pulsing rings */}
+                            <div className="absolute inset-0 flex items-center justify-center">
+                              <div className="w-64 h-64 border-2 border-purple-500/30 rounded-full animate-ping" style={{animationDuration: '3s'}}></div>
+                              <div className="absolute w-48 h-48 border-2 border-cyan-500/30 rounded-full animate-ping" style={{animationDuration: '2s'}}></div>
+                            </div>
+
+                            {/* Central shield */}
+                            <div className="relative z-10">
+                              <svg className="w-32 h-32 animate-pulse" viewBox="0 0 24 24" fill="none">
+                                <defs>
+                                  <linearGradient id="shieldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style={{stopColor: 'rgb(168, 85, 247)', stopOpacity: 1}} />
+                                    <stop offset="100%" style={{stopColor: 'rgb(6, 182, 212)', stopOpacity: 1}} />
+                                  </linearGradient>
+                                </defs>
+                                <path d="M12 2L3 7v5c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V7l-9-5z" fill="url(#shieldGradient)" opacity="0.2" />
+                                <path d="M12 2L3 7v5c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V7l-9-5z" stroke="url(#shieldGradient)" strokeWidth="1.5" fill="none" />
+                                <path d="M9 12l2 2 4-4" stroke="rgb(34, 197, 94)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                  <animate attributeName="stroke-dasharray" from="0 20" to="20 0" dur="1.5s" repeatCount="indefinite" />
+                                </path>
+                              </svg>
+                            </div>
+
+                            {/* Floating email icons */}
+                            <div className="absolute -top-8 -left-8 animate-float" style={{animationDuration: '4s'}}>
+                              <div className="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center backdrop-blur-sm border border-purple-500/30">
+                                <span className="text-2xl">📧</span>
+                              </div>
+                            </div>
+                            <div className="absolute -top-8 -right-8 animate-float" style={{animationDuration: '3.5s', animationDelay: '0.5s'}}>
+                              <div className="w-12 h-12 bg-red-500/20 rounded-lg flex items-center justify-center backdrop-blur-sm border border-red-500/30">
+                                <span className="text-2xl">⚠️</span>
+                              </div>
+                            </div>
+                            <div className="absolute -bottom-8 left-0 animate-float" style={{animationDuration: '4.5s', animationDelay: '1s'}}>
+                              <div className="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center backdrop-blur-sm border border-cyan-500/30">
+                                <span className="text-2xl">🔒</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Scanning effect */}
+                        <div className="absolute inset-0 opacity-30">
+                          <div className="absolute w-full h-1 bg-gradient-to-r from-transparent via-purple-500 to-transparent animate-scan"></div>
+                        </div>
+
+                        {/* Text overlay */}
+                        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center">
+                          <div className="bg-purple-900/50 backdrop-blur-sm px-6 py-2 rounded-full border border-purple-500/30">
+                            <span className="text-purple-300 font-bold text-sm">AI-Powered Phishing Detection</span>
+                          </div>
+                        </div>
+                      </div>
+                    )}
                     {project.title === 'Health Monitoring System' && (
                       <div className="relative w-full h-full flex items-center justify-center bg-black overflow-hidden">
                         {/* Monitor screen with scan lines */}
@@ -663,17 +731,12 @@ export default function Projects() {
                   <div className={`absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6`}>
                     <div className="text-white">
                       <div className="flex gap-3">
-                        <button 
+                        <button
                           onClick={() => openProjectDetails(project)}
                           className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-lg hover:bg-white/30 transition-colors"
                         >
                           View More
                         </button>
-                        {project.repo && (
-                          <a href={project.repo} target="_blank" rel="noreferrer" className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-lg hover:bg-white/30 transition-colors">
-                            View Code
-                          </a>
-                        )}
                       </div>
                     </div>
                   </div>
@@ -715,19 +778,6 @@ export default function Projects() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                   </button>
-                  {project.repo && (
-                    <a 
-                      href={project.repo} 
-                      target="_blank" 
-                      rel="noreferrer" 
-                      className="group inline-flex items-center px-6 py-3 border-2 border-emerald-600 text-emerald-600 rounded-xl font-medium hover:bg-emerald-600 hover:text-white hover-lift transition-all duration-300"
-                    >
-                      <span>View Code</span>
-                      <svg className="ml-2 w-4 h-4 transform group-hover:rotate-12 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                      </svg>
-                    </a>
-                  )}
                 </div>
               </div>
             </div>
@@ -895,25 +945,7 @@ function ProjectDetailsView({ project, onClose }) {
             </div>
           )}
           
-          {/* Action Buttons */}
-          <div className="flex flex-wrap justify-center gap-4 animate-fadeInUp delay-300">
-            {project.repo && (
-              <a
-                href={project.repo}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-center px-8 py-4 bg-gray-900 hover:bg-gray-800 text-white rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl"
-              >
-                <svg className="mr-2 w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                </svg>
-                View Source Code
-                <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </a>
-            )}
-          </div>
+
         </div>
 
         {/* Stats Bar */}
@@ -1448,7 +1480,6 @@ function generateProjectDetailsHTML(project) {
             
             <div class="action-buttons">
                 ${project.demo ? `<a href="${project.demo}" target="_blank" class="btn btn-primary">Live Demo →</a>` : ''}
-                ${project.repo ? `<a href="${project.repo}" target="_blank" class="btn btn-secondary">View Code →</a>` : ''}
             </div>
         </div>
         
