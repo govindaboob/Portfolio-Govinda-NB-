@@ -99,17 +99,17 @@ export default function Projects() {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid gap-8 lg:gap-12">
+        <div className="grid gap-8 lg:gap-12 overflow-hidden">
           {filteredProjects.map((project, index) => (
             <div 
               key={project.title}
-              className="animate-fadeInUp grid gap-8 lg:grid-cols-2 lg:gap-12 items-center"
+              className="animate-fadeInUp grid gap-8 lg:grid-cols-2 lg:gap-12 items-center overflow-hidden"
               style={{animationDelay: `${400 + index * 200}ms`}}
               onMouseEnter={() => setHoveredProject(index)}
               onMouseLeave={() => setHoveredProject(null)}
             >
               {/* Project Image/Demo */}
-              <div className={`order-1 ${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'} relative group`}>
+              <div className={`order-1 ${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'} relative group overflow-hidden`}>
                 <div className="relative overflow-hidden rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-500">
                   <div className="aspect-video bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex items-center justify-center relative">
                     {/* Project-specific animated visuals */}
@@ -149,18 +149,18 @@ export default function Projects() {
                               </svg>
                             </div>
 
-                            {/* Floating email icons */}
-                            <div className="absolute -top-8 -left-8 animate-float" style={{animationDuration: '4s'}}>
+                            {/* Floating email icons - hidden on mobile to prevent overflow */}
+                            <div className="hidden md:block absolute -top-8 -left-8 animate-float" style={{animationDuration: '4s'}}>
                               <div className="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center backdrop-blur-sm border border-purple-500/30">
                                 <span className="text-2xl">📧</span>
                               </div>
                             </div>
-                            <div className="absolute -top-8 -right-8 animate-float" style={{animationDuration: '3.5s', animationDelay: '0.5s'}}>
+                            <div className="hidden md:block absolute -top-8 -right-8 animate-float" style={{animationDuration: '3.5s', animationDelay: '0.5s'}}>
                               <div className="w-12 h-12 bg-red-500/20 rounded-lg flex items-center justify-center backdrop-blur-sm border border-red-500/30">
                                 <span className="text-2xl">⚠️</span>
                               </div>
                             </div>
-                            <div className="absolute -bottom-8 left-0 animate-float" style={{animationDuration: '4.5s', animationDelay: '1s'}}>
+                            <div className="hidden md:block absolute -bottom-8 left-0 animate-float" style={{animationDuration: '4.5s', animationDelay: '1s'}}>
                               <div className="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center backdrop-blur-sm border border-cyan-500/30">
                                 <span className="text-2xl">🔒</span>
                               </div>
