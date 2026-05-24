@@ -12,6 +12,12 @@ const cv = {
   },
   experience: [
     {
+      company: 'Reliance Retail - Fashion & Lifestyle (AJIO)',
+      role: 'Data Analytics & Machine Learning Intern',
+      range: 'March 2026 - May 2026',
+      description: 'Worked on customer intent modeling and campaign spend optimization for AJIO. Built SQL and BigQuery pipelines over large-scale behavioral event data, identified high-intent users via segmentation and funnel analysis, and delivered insights to improve targeting and conversions. Tech stack: SQL, Python, BigQuery, Machine Learning, Data Analytics, Excel.'
+    },
+    {
       company: 'Center of Excellence (COE), RVCE - Cyber Range',
       role: 'Cyber Security Intern',
       range: 'September 2025 - December 2025',
